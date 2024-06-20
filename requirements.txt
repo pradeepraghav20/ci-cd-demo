@@ -1,2 +1,1 @@
 Flask==2.2.3
-Werkzeug 3.0.3
