@@ -28,8 +28,11 @@ jobs:
 
       - name: Deploy API using Docker Compose
         run: |
+          ls -al                    # Debugging step: List files in the current directory
+          cd deploy                 # Navigate to the directory containing docker-compose.yml
+          ls -al                    # Debugging step: List files in the deploy directory
           docker-compose up -d
-        working-directory: ./deploy
+        working-directory: ./deploy  # Adjusted to relative path
 
       - name: Verify deployment
         run: |
@@ -53,5 +56,4 @@ jobs:
 
       - name: Test with pytest
         run: |
-          pip install pytest
           pytest test.py
