@@ -41,4 +41,4 @@ jobs:
           script: |
             # Commands to pull Docker image and run it on EC2 instance
             docker pull $DOCKERHUB_USERNAME/my-image:v1.0
-            docker run -d -p 80:80 $DOCKERHUB_USERNAME/my-image:v1.0  # Example command, adjust ports as needed
+            docker run -d -p 80:8080 $DOCKERHUB_USERNAME/my-image:v1.0  # Example command, adjust ports as needed
