@@ -38,7 +38,7 @@ jobs:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          script: |
+          run: | 
             # Commands to pull Docker image and run it on EC2 instance   
-            #sudo docker pull $DOCKERHUB_USERNAME/my-image:v1.0
+            sudo docker pull $DOCKERHUB_USERNAME/my-image:v1.0
             #sudo docker run -d -p 80:8080 $DOCKERHUB_USERNAME/my-image:v1.0  # Example command, adjust ports as needed
