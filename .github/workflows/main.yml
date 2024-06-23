@@ -29,7 +29,7 @@ jobs:
       # Deploy to EC2 instance
       - name: Deploy to EC2
         env:
-          EC2_HOST: ${{ secrets.EC2_HOST }}
+          EC2_HOST: ${{secrets.EC2_HOST}}
           EC2_USERNAME:  ${{ secrets.EC2_USERNAME}}
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY}}
           IMAGE_NAME: my-image
