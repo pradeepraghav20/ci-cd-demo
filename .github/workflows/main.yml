@@ -29,9 +29,9 @@ jobs:
       # Deploy to EC2 instance
       - name: Deploy to EC2
         env:
-          EC2_HOST: your-ec2-public-ip
-          EC2_USERNAME: ec2-user
-          SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_PRIVATE_KEY }}
+          EC2_HOST: ${{ secrets.EC2_HOST }}
+          EC2_USERNAME:  ${{ secrets.EC2_USERNAME}}
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY}}
           IMAGE_NAME: my-image
         run: |
           ssh -i $SSH_PRIVATE_KEY $EC2_USERNAME@$EC2_HOST "docker pull $DOCKERHUB_USERNAME/$IMAGE_NAME:v2.0 && docker stop my-container && docker rm my-container && docker run -d --name my-container -p 80:80 $DOCKERHUB_USERNAME/$IMAGE_NAME:v2.0"
