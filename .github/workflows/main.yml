@@ -40,5 +40,5 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           run: | 
             # Commands to pull Docker image and run it on EC2 instance   
-            docker pull pradeepraghav20/my-image:v2.0
+            sudo docker run -d -p 80:8080 pradeepraghav20/my-image:v1.0
             
